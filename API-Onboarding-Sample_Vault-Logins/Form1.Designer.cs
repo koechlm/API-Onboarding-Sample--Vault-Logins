@@ -34,17 +34,17 @@ namespace API_Onboarding_Sample_Vault_Logins
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtServer = new System.Windows.Forms.TextBox();
+            this.txtVaultName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtServer = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtVaultName = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,6 +70,7 @@ namespace API_Onboarding_Sample_Vault_Logins
             this.button2.Text = "Login - Client License, Autodesk ID";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -80,6 +81,7 @@ namespace API_Onboarding_Sample_Vault_Logins
             this.button3.Text = "Login - Client License, Windows Account";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox1
             // 
@@ -101,33 +103,33 @@ namespace API_Onboarding_Sample_Vault_Logins
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Logins - WebService Connection";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Location = new System.Drawing.Point(13, 202);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(775, 216);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Login - Vault Client Framework (aka VDF)";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(223, 30);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(223, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Login - Vault Login Dialog";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // txtUserName
             // 
             this.txtUserName.Location = new System.Drawing.Point(153, 38);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(293, 20);
             this.txtUserName.TabIndex = 3;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(153, 71);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(293, 20);
+            this.txtPassword.TabIndex = 7;
+            // 
+            // txtServer
+            // 
+            this.txtServer.Location = new System.Drawing.Point(153, 104);
+            this.txtServer.Name = "txtServer";
+            this.txtServer.Size = new System.Drawing.Size(293, 20);
+            this.txtServer.TabIndex = 8;
+            // 
+            // txtVaultName
+            // 
+            this.txtVaultName.Location = new System.Drawing.Point(153, 137);
+            this.txtVaultName.Name = "txtVaultName";
+            this.txtVaultName.Size = new System.Drawing.Size(293, 20);
+            this.txtVaultName.TabIndex = 10;
             // 
             // label1
             // 
@@ -156,20 +158,6 @@ namespace API_Onboarding_Sample_Vault_Logins
             this.label3.TabIndex = 6;
             this.label3.Text = "Server Name or IP Address:";
             // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(153, 71);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(293, 20);
-            this.txtPassword.TabIndex = 7;
-            // 
-            // txtServer
-            // 
-            this.txtServer.Location = new System.Drawing.Point(153, 104);
-            this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(293, 20);
-            this.txtServer.TabIndex = 8;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -178,14 +166,17 @@ namespace API_Onboarding_Sample_Vault_Logins
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Vault:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // txtVaultName
+            // groupBox2
             // 
-            this.txtVaultName.Location = new System.Drawing.Point(153, 137);
-            this.txtVaultName.Name = "txtVaultName";
-            this.txtVaultName.Size = new System.Drawing.Size(293, 20);
-            this.txtVaultName.TabIndex = 10;
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Location = new System.Drawing.Point(13, 202);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(775, 216);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Login - Vault Client Framework (aka VDF)";
             // 
             // pictureBox1
             // 
@@ -196,6 +187,17 @@ namespace API_Onboarding_Sample_Vault_Logins
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(223, 30);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(223, 23);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Login - Vault Login Dialog";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
